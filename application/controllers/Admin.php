@@ -23,8 +23,8 @@ class Admin extends Frontend_Controller {
 	{
 		$place = $this->place_m->get_place($id);
 		
-		unlink(realpath(APPPATH) . '../' . $place->photo);
-		
+		//unlink(realpath(APPPATH) . '../' . $place->photo);
+		unlink($place->photo);
 		
 		$this->place_m->delete($id);
 		$this->cache->clean();
